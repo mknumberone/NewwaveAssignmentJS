@@ -1,37 +1,37 @@
 //API
-var fiml1Api="http://localhost:3000/fiml1"
-var fiml2Api="http://localhost:3000/fiml2"
+const fiml1Api = "https://60cc0a5771b73400171f6eb6.mockapi.io/Fiml1"
+const fiml2Api = "https://60cc0a5771b73400171f6eb6.mockapi.io/Fiml2"
 //Slider 1 render
-const slider1=fetch(fiml1Api)
+const slider1 = fetch(fiml1Api)
     .then(function(respone){
         return respone.json()
     })
     .then(function(fiml1s){
-        var htmls = fiml1s.map(function(fiml1){
+        let htmls = fiml1s.map(function(fiml1){
             return `
             <li>
                 <img src=${fiml1.img}/>    
             </li>`
         })
-        var html = htmls.join("")
+        let html = htmls.join("")
         document.getElementById('fiml1').innerHTML=html
     })
     .catch(function(err){
         alert("Có lỗi")
     })
 //Slider 2 render
-const slider2=fetch(fiml2Api)
+const slider2 = fetch(fiml2Api)
     .then(function(respone){
         return respone.json()
     })
     .then(function(fiml2s){
-        var htmls = fiml2s.map(function(fiml2){
+        let htmls = fiml2s.map(function(fiml2){
             return `
             <li>
                 <img src=${fiml2.img}/>    
             </li>`
         })
-        var html = htmls.join("")
+        let html = htmls.join("")
         document.getElementById('fiml2').innerHTML=html
     })
     .catch(function(err){
